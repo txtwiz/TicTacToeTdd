@@ -18,7 +18,7 @@ public class TicTacToe {
     	do{
     		Random randx = new Random();
         	Random randy = new Random();
-        	message = play(randx.nextInt(3) + 1, randy.nextInt(3) + 1);
+        	message = play(randx.nextInt(3) + 1, randy.nextInt(3) + 1, true);
         	if (message != CHANGE_POSITION) {
 	        	try {
 	        	    Thread.sleep(2000);
@@ -67,7 +67,7 @@ public class TicTacToe {
     
     
     //fa la giocata nella casella scelta
-    public String play(int x, int y) {
+    public String play(int x, int y, boolean print) {
     	String message = NO_FINISH;
         if (checkCell(x,y)) {
         
@@ -89,8 +89,9 @@ public class TicTacToe {
         		message = CHANGE_POSITION;
         	}
         }
-        
-        printBoard(message);
+        if (print){
+        	printBoard(message);
+        }
         
         return message;
     }
