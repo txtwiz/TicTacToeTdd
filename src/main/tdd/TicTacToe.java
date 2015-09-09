@@ -98,7 +98,7 @@ public class TicTacToe {
         	
         }
         
-        if (print){
+        if (print && message != CHANGE_POSITION){
         	printBoard(message);
         }
         
