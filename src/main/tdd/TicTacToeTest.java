@@ -47,6 +47,7 @@ public class TicTacToeTest {
         String actual = ticTacToe.play(3, 1, false); // X
         
         assertEquals("PLAYER X WON!", actual);
+        
     }
 
     
@@ -93,11 +94,14 @@ public class TicTacToeTest {
         String actual = ticTacToe.play(3, 2, false);
         
         assertEquals("GAME ENDS WITH A DRAW!", actual);
+        
     }
 
     
     @Test
     public void testBotRandomGame() {
+    	
     	ticTacToe.bot();
+    	
     }
 }

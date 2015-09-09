@@ -18,7 +18,9 @@ public class TicTacToe {
     	do{
     		Random randx = new Random();
         	Random randy = new Random();
+        	
         	message = play(randx.nextInt(3) + 1, randy.nextInt(3) + 1, true);
+        	
         	if (message != CHANGE_POSITION) {
 	        	try {
 	        	    Thread.sleep(2000);
@@ -28,7 +30,9 @@ public class TicTacToe {
         	} else {
         		message = NO_FINISH;
         	}
+        	
     	}while(message == NO_FINISH);
+    	
     }
     
     
@@ -37,11 +41,13 @@ public class TicTacToe {
     public void printBoard(String message){
     	
     	System.out.println("PLAYER " + lastPlayer + ":");
+    	
     	System.out.println(board[0][0] + "|" + board[0][1] + "|" + board[0][2]);
     	System.out.println("-" + "+" + "-" + "+" + "-");
     	System.out.println(board[1][0] + "|" + board[1][1] + "|" + board[1][2]);
     	System.out.println("-" + "+" + "-" + "+" + "-");
     	System.out.println(board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
+    	
     	System.out.println(message +"\n");
     	
     }
@@ -83,12 +89,15 @@ public class TicTacToe {
 	        }
 	        
         } else {
+        	
         	if (isDraw()) {
         		message = RESULT_DRAW;
         	} else {
         		message = CHANGE_POSITION;
         	}
+        	
         }
+        
         if (print){
         	printBoard(message);
         }
@@ -98,9 +107,11 @@ public class TicTacToe {
 
     //indica chi è il prossimo a giocare
     public char nextPlayer() {
+    	
         if (lastPlayer == 'X') {
             return 'O';
         }
+        
         return 'X';
     }
 
@@ -144,12 +155,16 @@ public class TicTacToe {
         
         	for (int y = 0; y < SIZE; y++) {
                 if (Character.isWhitespace(board[x][y])) {
+                	
                     return false;
+                    
                 }
             }
         	
         }
+        
         return true;
+        
     }
 
 }
