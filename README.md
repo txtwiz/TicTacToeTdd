@@ -2,7 +2,7 @@
 
 Implementation of simple TicTacToe game using TDD.
 
-# User Stories
+## User Stories
 
 * the game has an empty board so the player can start the match
 * the game is over if all cell in one of the 3 columns are taken by the same symbol
